@@ -10,7 +10,6 @@ public class Collision : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Collision");
         if(collision.gameObject.tag == "Wall")
         {
             movementScript.dragging = false;
