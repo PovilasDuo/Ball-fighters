@@ -9762,6 +9762,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a22ff95bff292445aa5dc0cc437305f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionGameObject: {fileID: 1769270591360220467, guid: 4a1cae6ec12e93b488fb71294e420a9d, type: 3}
+  spawnOnCollider: 1
 --- !u!1 &8654687554223860347
 GameObject:
   m_ObjectHideFlags: 0
