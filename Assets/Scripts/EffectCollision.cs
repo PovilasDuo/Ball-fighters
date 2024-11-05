@@ -13,9 +13,14 @@ public class EffectCollision : MonoBehaviour
         Vector3 position = transform.position;
         if (collision.gameObject.tag == "Player")
         {
-            if (spawnOnCollider) position = collision.transform.position;
+            if (spawnOnCollider) 
+            {
+                position = collision.transform.position;
+                collision.gameObject.GetComponent<Stats>().health++;
+            } 
             Instantiate(explosionGameObject, position, Quaternion.identity);
             Destroy(this.gameObject);
+            collision.gameObject.GetComponent<Stats>().health--;
         }
         if(collision.gameObject.tag == "Shield")
         {

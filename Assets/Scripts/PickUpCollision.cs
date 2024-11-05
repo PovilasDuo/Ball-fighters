@@ -8,11 +8,7 @@ public class PickUpCollision : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        HandleCollision(collision.gameObject);
-    }
-
-    public void HandleCollision(GameObject collider)
-    {
+        GameObject collider = collision.gameObject;
         if (collider.CompareTag("Player"))
         {
             GameObject player = collider.gameObject;
@@ -29,7 +25,7 @@ public class PickUpCollision : MonoBehaviour
             {
                 playerPosition = GameObject.Find("P1").GetComponent<Transform>().position;
                 target = GameObject.Find("P1").GetComponent<Transform>().position;
-                instantiated.layer = 9; 
+                instantiated.layer = 9;
             }
             if (this.tag == "Attack")
             {
@@ -41,9 +37,13 @@ public class PickUpCollision : MonoBehaviour
             }
             else if (this.tag == "Defense")
             {
-                prefab.GetComponent<StickToPlayer>().playerGameObject = collider.gameObject;
+                prefab.GetComponent<StickToPlayer>().playerGameObject = player;
+                if(this.name == "Heal")
+                {
+                    player.GetComponent<Stats>().health++;
+                }
             }
-
         }
     }
+
 }
