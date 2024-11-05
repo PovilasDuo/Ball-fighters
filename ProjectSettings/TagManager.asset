@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 3
   tags:
   - Wall
+  - FxTemporaire
+  - Attack
+  - Defense
+  - Undefined
+  - Shield
   layers:
   - Default
   - TransparentFX

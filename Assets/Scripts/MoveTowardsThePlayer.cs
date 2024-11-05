@@ -14,7 +14,6 @@ public class MoveTowardsThePlayer : MonoBehaviour
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        //Destroy(this.gameObject, 2.5f);
     }
 
     private void FixedUpdate()
@@ -38,7 +37,6 @@ public class MoveTowardsThePlayer : MonoBehaviour
         if (Vector2.Distance(rb2d.position, target) < 0.1f)
         {
             isMoving = false;
-            //Destroy(this.gameObject);
         }
     }
 
