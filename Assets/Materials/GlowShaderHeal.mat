@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GlowShader
+  m_Name: GlowShaderHeal
   m_Shader: {fileID: -6465566751694194690, guid: 96bd23a7fee10db43a4f33f28d1c7359, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -62,7 +62,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _Color: {r: 2.670157, g: 2.07545, b: 0, a: 0}
+    - _Color: {r: 0.8632991, g: 4.592038, b: 0.19927663, a: 0}
     - _GlowColor: {r: 2, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
