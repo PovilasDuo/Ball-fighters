@@ -8,6 +8,7 @@ public class EffectCollision : MonoBehaviour
     private GameObject explosionGameObject;
     [SerializeField]
     private bool spawnOnCollider = false;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Vector3 position = transform.position;
@@ -17,7 +18,7 @@ public class EffectCollision : MonoBehaviour
             {
                 position = collision.transform.position;
                 collision.gameObject.GetComponent<Stats>().health++;
-            } 
+            }
             Instantiate(explosionGameObject, position, Quaternion.identity);
             Destroy(this.gameObject);
             collision.gameObject.GetComponent<Stats>().health--;

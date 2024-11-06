@@ -8,7 +8,6 @@ public class UIManager : MonoBehaviour
     public TMP_Text p1Hp;
     public TMP_Text p2Hp;
     public TMP_Text victoryText;
-    public Button restartButton;
 
     public GameObject P1;
     public GameObject P2;
@@ -20,12 +19,11 @@ public class UIManager : MonoBehaviour
         GameOver();
     }
 
-    public void GameOver()
+    private void GameOver()
     {
         if (P1.GetComponent<Stats>().health == 0 || P2.GetComponent<Stats>().health == 0)
         {
             victoryText.gameObject.SetActive(true);
-            restartButton.gameObject.SetActive(true);
             if (P1.GetComponent<Stats>().health == 0)
             {
                 victoryText.text = "Player one wins";
@@ -34,8 +32,20 @@ public class UIManager : MonoBehaviour
             {
                 victoryText.text = "Player two wins";
             }
+            victoryText.text += "\nPress to restart";
+            p1Hp.gameObject.SetActive(false);
+            p2Hp.gameObject.SetActive(false);
             P1.GetComponent<Movement>().enabled = false;
             P2.GetComponent<Movement>().enabled = false;
+            RestartLevel();
+        }
+    }
+
+    private void RestartLevel()
+    {
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }

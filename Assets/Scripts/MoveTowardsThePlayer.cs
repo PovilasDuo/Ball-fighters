@@ -1,24 +1,26 @@
-using System;
 using System.Collections;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class MoveTowardsThePlayer : MonoBehaviour
 {
     public bool isMoving = false;
-    public Vector2 target;
     public float moveSpeed = 5;
 
     private Rigidbody2D rb2d;
 
+    private bool positionCalculated = false;
+    public Vector2 direction;
+
     private void Start()
     {
+        //Destroy(this.gameObject, 4f);
         rb2d = GetComponent<Rigidbody2D>();
+
     }
 
     private void FixedUpdate()
     {
-        if (isMoving && target != null)
+        if (isMoving && direction != null)
         {
             StartCoroutine(DelaySpawn());
             MoveTowardsTarget();
@@ -27,16 +29,15 @@ public class MoveTowardsThePlayer : MonoBehaviour
 
     private void MoveTowardsTarget()
     {
-        Vector2 newPosition = Vector2.MoveTowards(rb2d.position, target, moveSpeed * Time.fixedDeltaTime);
-        Vector2 direction = target - rb2d.position;
+        Vector2 newPosition = rb2d.position + direction * moveSpeed * Time.fixedDeltaTime;
         rb2d.MovePosition(newPosition);
 
-        float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg * 2;
-        rb2d.rotation = targetAngle;
-
-        if (Vector2.Distance(rb2d.position, target) < 0.1f)
+        if (!positionCalculated) 
         {
-            isMoving = false;
+            float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            if (this.gameObject.transform.position.y > 0) rb2d.rotation = 180 - targetAngle * -2;
+            else rb2d.rotation = targetAngle * 2;
+            positionCalculated = true;
         }
     }
 

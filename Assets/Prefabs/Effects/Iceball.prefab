@@ -4848,6 +4848,7 @@ GameObject:
   - component: {fileID: 4428003499962923857}
   - component: {fileID: -3781051170307546863}
   - component: {fileID: 3737863209006319582}
+  - component: {fileID: 672785688410567620}
   m_Layer: 0
   m_Name: Iceball
   m_TagString: Untagged
@@ -9764,6 +9765,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionGameObject: {fileID: 1769270591360220467, guid: 4a1cae6ec12e93b488fb71294e420a9d, type: 3}
   spawnOnCollider: 1
+  explosionSound: {fileID: 0}
+--- !u!114 &672785688410567620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7069885591514128767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37852fdc5f193204982701b2165e457d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerGameObject: {fileID: 0}
+  stickTime: 3
 --- !u!1 &8654687554223860347
 GameObject:
   m_ObjectHideFlags: 0

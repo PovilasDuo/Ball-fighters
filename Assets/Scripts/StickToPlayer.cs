@@ -8,7 +8,8 @@ public class StickToPlayer : MonoBehaviour
 
     void Start()
     {
-        Destroy(this.gameObject, stickTime + 1);
+        if (this.gameObject.tag == "Defense") Destroy(this.gameObject, stickTime + 1f);
+        else Destroy(this.gameObject, stickTime + 4f);
         StartCoroutine(StickToPlayerForFewSeconds());
     }
 

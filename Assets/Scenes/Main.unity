@@ -1570,6 +1570,7 @@ MonoBehaviour:
   p1Hp: {fileID: 614556421}
   p2Hp: {fileID: 890478452}
   victoryText: {fileID: 640037860}
+  restartButton: {fileID: 0}
   P1: {fileID: 1542105615}
   P2: {fileID: 1697321533}
 --- !u!114 &1057776919
