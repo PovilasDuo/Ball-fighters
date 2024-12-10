@@ -9749,8 +9749,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMoving: 0
-  target: {x: 0, y: 0}
   moveSpeed: 3
+  direction: {x: 0, y: 0}
 --- !u!114 &3737863209006319582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9765,7 +9765,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionGameObject: {fileID: 1769270591360220467, guid: 4a1cae6ec12e93b488fb71294e420a9d, type: 3}
   spawnOnCollider: 1
-  explosionSound: {fileID: 0}
+  shockWaveGameObject: {fileID: 8648251880247147590, guid: b11ec1dba07b2b24bb169a5c6a3c7227, type: 3}
 --- !u!114 &672785688410567620
 MonoBehaviour:
   m_ObjectHideFlags: 0
